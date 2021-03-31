@@ -112,6 +112,10 @@ $ brew install ruby@2.7
 
 After Ruby is installed, I have to place the gem bin directory `/opt/homebrew/lib/ruby/gems/2.7.0/bin` into my PATH.
 
+```
+$ gem install cocoapods
+```
+
 At this point, `pod --version` should be working.
 
 ```
