@@ -51,7 +51,14 @@ By default, FPM is configured to listen on port 9000. I prefer PHP-FPM listening
 listen = /opt/homebrew/var/run/php-fpm.sock
 ```
 
-After that, starting PHP-FPM as a service is done with `brew services start php@7.4`. 
+After that, starting PHP-FPM as a service is done with `brew services start php@7.4`.
+
+UPDATE: I recently started using `phpbrew`. When building PHP, you need to specify `--without-pcre-jit` like so, because the PCRE library has not yet fixed JIT issues with their library for Apple Silicon. (https://www.php.net/manual/en/pcre.installation.php)
+```
+$ phpbrew install 8.0 -- --without-pcre-jit
+```
+
+Alternatively, I believe you can specify the build configuration to use an external PCRE library.
 
 ### Composer 1.x
 Difficulty: Easy
